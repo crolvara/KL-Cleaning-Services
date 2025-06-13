@@ -1,0 +1,269 @@
+:root {
+  --color-bg: #002b34; /* Тъмен зеленосин фон */
+  --color-text: #e5be95; /* Бежово-златист цвят */
+  --color-accent: #e5be95; /* Бежово-златист цвят */
+  --color-highlight: #e5be95;
+  --color-accent-dark: #002530; /* Още по-тъмен фон нюанс */
+
+  /* Градиенти и shadows */
+  --gradient-primary: linear-gradient(135deg, #e5be95 0%, #d4a373 100%);
+  --gradient-dark: linear-gradient(135deg, #002b34 0%, #002a34 100%);
+  --shadow-soft: 0 10px 30px rgba(0, 43, 52, 0.3);
+  --shadow-medium: 0 15px 40px rgba(0, 43, 52, 0.4);
+  --shadow-strong: 0 20px 50px rgba(0, 43, 52, 0.5);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  color: #e5be95;
+  background: var(--gradient-dark);
+  overflow-x: hidden;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.app {
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#root {
+  max-width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 0rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2.5em;
+  background: rgba(229, 190, 149, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(229, 190, 149, 0.1);
+  border-radius: 20px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-medium);
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.main-content {
+  padding-top: 80px;
+  flex: 1;
+  width: 100%;
+}
+
+.page-container {
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Glassmorphism ефект */
+.glass {
+  background: rgba(229, 190, 149, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(229, 190, 149, 0.1);
+  border-radius: 20px;
+}
+
+/* Контейнери със стил */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Модерни spacing утилити */
+.section-padding {
+  padding: clamp(4rem, 8vw, 8rem) 0;
+}
+
+.mb-sm {
+  margin-bottom: 1rem;
+}
+.mb-md {
+  margin-bottom: 2rem;
+}
+.mb-lg {
+  margin-bottom: 3rem;
+}
+.mb-xl {
+  margin-bottom: 4rem;
+}
+
+/* Tablet Styles */
+@media screen and (max-width: 1024px) {
+  #root {
+    padding: 0;
+  }
+
+  .page-container {
+    padding: 0 1rem;
+  }
+
+  .main-content {
+    padding-top: 70px;
+  }
+
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  #root {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .page-container {
+    padding: 0 0.5rem;
+  }
+
+  .main-content {
+    padding-top: 65px;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .card {
+    padding: 1.8em;
+    border-radius: 15px;
+  }
+}
+
+/* Small Mobile Styles */
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .page-container {
+    padding: 0 0.25rem;
+  }
+
+  .container {
+    padding: 0 0.8rem;
+  }
+
+  .card {
+    padding: 1.5em;
+    border-radius: 12px;
+  }
+}

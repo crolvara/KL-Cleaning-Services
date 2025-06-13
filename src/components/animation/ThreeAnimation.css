@@ -1,0 +1,26 @@
+.three-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Добавяме стил, при който анимацията се показва само в hero секцията */
+.three-animation:not(.home-hero-section .three-animation) {
+  display: none;
+}
+
+/* Осигуряваме, че само една анимация е видима */
+.home-hero-section .three-animation {
+  display: block;
+}
+
+/* Осигуряваме, че канвасът заема пълния екран */
+.three-animation canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
